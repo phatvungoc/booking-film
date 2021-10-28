@@ -2,7 +2,7 @@
     "name": "booking-film-16-10",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://phatvungoc/github.io/booking-cinema",
+    "homepage": "https://phatvungoc.github.io/booking-cinema",
     "dependencies": {
         "@emotion/react": "^11.5.0",
         "@emotion/styled": "^11.3.0",
