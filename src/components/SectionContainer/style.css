@@ -1,0 +1,471 @@
+.section-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #020d18;
+}
+
+/* Coontainer-bg-up */
+.container-bg-up {
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+.container-film {
+    max-width: 68em;
+    margin: 0 auto;
+    max-height: 100%;
+}
+
+.scmovie-tabs {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+}
+
+.scmovie-tabs li {
+    color: #fff;
+    list-style: none;
+    margin-left: 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.scmovie-tabs li:hover,
+.scmovie-tabs li.active-color {
+    color: #dd003f;
+}
+
+/* List Movie */
+.scmovie-list {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 15px;
+}
+
+.film {
+    position: relative;
+    cursor: pointer;
+}
+
+.film-image {
+    width: 250px;
+    position: relative;
+}
+
+.film-image img {
+    width: 250px;
+    border-radius: 10px;
+}
+
+.film-image::before {
+    content: '';
+    background-color: #000;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0);
+}
+
+.film:hover .film-image::before {
+    opacity: 0.7;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.film-description {
+    position: absolute;
+    left: 10px;
+    bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.film-description span,
+.film-description h2 {
+    color: #fff;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.film-description .film-time {
+    background-color: #dd003f;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+.film-star span {
+    font-size: 18px;
+}
+
+.icon-star {
+    color: #dcf836;
+    font-size: 22px;
+}
+
+/* Container-bg-down */
+.container-bg-down {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #06121e;
+}
+
+.mvschedule-container {
+    max-width: 70rem;
+    margin: 0 auto;
+    display: flex;
+    padding: 60px 0;
+}
+
+.mvschedule-cinema {
+    border: 1px solid #405266;
+    max-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mvschedule-cinema-item {
+    position: relative;
+    text-align: center;
+    padding: 15px;
+    height: 90px;
+    opacity: 0.5;
+    cursor: pointer;
+    border-bottom: 1px solid #405266;
+}
+
+.mvschedule-cinema-item img {
+    height: 60px;
+}
+
+.mvschedule-location {
+    border-top: 1px solid #405266;
+    border-bottom: 1px solid #405266;
+}
+
+.mvschedule-location-item {
+    padding: 8px 15px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.mvschedule-location-item:hover,
+.mvschedule-location-item.active {
+    opacity: 1;
+}
+
+.mvschedule-cinema-item.active,
+.mvschedule-cinema-item:hover {
+    opacity: 1;
+}
+
+.mvschedule-location-title {
+    color: #dcf836;
+    text-transform: capitalize;
+}
+
+.mvschedule-location-desc {
+    color: #9b9b9b;
+    text-transform: capitalize;
+}
+
+.mvschedule-location-detail {
+    color: #dd003f;
+    text-transform: capitalize;
+}
+
+.mvschedule-movielist {
+    flex: 1;
+    border: 1px solid #405266;
+    overflow-y: auto;
+}
+
+.mvschedule-movielist-image {
+    min-width: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+.mvschedule-movielist-item {
+    padding: 20px 15px;
+}
+
+.mvschedule-movielist-content {
+    display: flex;
+}
+
+.mvschedule-movielist-image a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.mvschedule-movielist-image img {
+    width: 100%;
+    height: auto;
+}
+
+.mvschedule-movielist-title {
+    color: #fff;
+    text-decoration: none;
+}
+
+.mvschedule-movielist-desc {
+    color: #9b9b9b;
+}
+
+.mvschedule-movielist-desc span {
+    color: #dd003f;
+}
+
+.mvschedule-movielist-showtimes-date {
+    color: #dcf836;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #405266;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.mvschedule-movielist-showtimes-date:hover,
+.mvschedule-movielist-showtimes-date.active {
+    background-color: #dd003f;
+    color: #dcf836;
+}
+
+.mvschedule-movielist-showtimes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -7px;
+    margin-right: -7px;
+}
+.mvschedule-movielist-showtimes-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+    position: relative;
+    width: 100%;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-bottom: 5px;
+}
+.mvschedule-movielist-showtimes-content {
+    background-color: #233a50;
+    border: 1px solid #405266;
+    color: #abb7c4;
+    display: inline-block;
+    padding: 10px 0;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+}
+
+.mvschedule-movielist-showtimes-content span {
+    color: #dcf836;
+    font-size: 16px;
+}
+
+.mvschedule-movielist-showtimes-content label {
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-bottom: 0;
+}
+
+/* 
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
+*/
+
+/* Slick css */
+.slick-arrow {
+    display: none !important;
+}
+
+/* Responsive */
+.header-bar {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    border: 3px solid #fff;
+}
+
+.bar-button {
+    margin-left: 4px;
+    margin-top: 5px;
+}
+
+/* Mobile: witdh < 740px */
+@media only screen and (max-width: 280px) {
+    .film-image img {
+        width: 104px;
+    }
+
+    .film-description {
+        width: 80px;
+    }
+
+    .film-description h2 {
+        font-size: 11px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .film-description .film-time {
+        width: 100%;
+        margin-bottom: 0;
+        font-size: 13px;
+    }
+
+    .film-description .film-star {
+        font-size: 10px;
+    }
+
+    .icon-star {
+        color: #dcf836;
+        font-size: 15px;
+    }
+
+    .film-star span {
+        font-size: 14px;
+    }
+
+    .slick-dots {
+        text-align: center !important;
+    }
+}
+
+@media only screen and (min-width: 281px) and (max-width: 374px) {
+    .film-image img {
+        width: 130px;
+    }
+
+    .film-description {
+        width: 120px;
+    }
+
+    .film-description h2 {
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .slick-dots {
+        text-align: center !important;
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 410px) {
+    .film-image img {
+        width: 150px;
+    }
+
+    .film-description {
+        width: 140px;
+    }
+
+    .film-description h2 {
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .slick-dots {
+        text-align: center !important;
+    }
+}
+
+@media only screen and (min-width: 411px) and (max-width: 539px) {
+    .film-image img {
+        width: 160px;
+    }
+
+    .film-description h2 {
+        font-size: 16px;
+    }
+
+    .slick-dots {
+        text-align: center !important;
+    }
+}
+
+@media only screen and (min-width: 540px) and (max-width: 768px) {
+    .film-image img {
+        width: 220px;
+    }
+
+    .slick-dots {
+        text-align: center !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .mvschedule-container {
+        flex-wrap: wrap;
+    }
+
+    .mvschedule-cinema {
+        flex-direction: row;
+        overflow-y: scroll;
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .mvschedule-location {
+        width: 100%;
+        border-left: 1px solid #405266;
+        border-right: 1px solid #405266;
+    }
+
+    .mvschedule-movielist {
+        overflow-y: inherit;
+    }
+}
+
+/* Tablet and Mobile */
+@media only screen and (max-width: 1112px) {
+    /* ... */
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1112px) {
+    .film-image img {
+        width: 230px;
+        border-radius: 10px;
+    }
+}
+
+/* PC: width >= 1024px */
+@media only screen and (min-width: 1112px) {
+    /* ... */
+}

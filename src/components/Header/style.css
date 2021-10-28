@@ -1,0 +1,591 @@
+.header {
+    background-image: url('../../assets/image/slider-bg.jpg');
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 40px;
+    font-size: 14px;
+}
+
+/* Header Container */
+.header-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80em;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 24px;
+    position: relative;
+}
+
+.header-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    background-image: url('../../assets/image/logo1.png');
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 60px;
+    position: relative;
+    display: inline-block;
+}
+
+.header-menu {
+    display: flex;
+    max-width: 62.5em;
+    justify-content: space-between;
+}
+
+.header-menu li:hover > a {
+    color: #dd003f;
+}
+
+.header-menu-left {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    left: -250px;
+}
+
+.header-menu-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 210px;
+}
+
+.header-menu-right li {
+    cursor: pointer;
+}
+
+.header-menu-login {
+    display: block;
+    background-color: #dd003f;
+    border-radius: 40px;
+    padding: 8px 20px;
+}
+
+.header-menu-login span {
+    color: #fff;
+}
+
+.header ul li {
+    list-style: none;
+    text-transform: uppercase;
+    color: #abb7c4;
+    font-weight: 600;
+}
+
+.header-menu-link {
+    text-decoration: none;
+    color: #abb7c4;
+    padding: 15px;
+}
+
+.header-menu-link i {
+    margin-left: 4px;
+}
+
+.header-menu-link.active {
+    color: #dd003f;
+}
+
+.header-menu-list {
+    position: relative;
+}
+
+.header-menu-list::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.header-menu-list:hover .link-news {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+
+.link-news {
+    position: absolute;
+    top: 40px;
+    background-color: #fff;
+    width: 160px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 20px;
+    z-index: 1;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(40px);
+    transition: all 0.4s ease-in-out;
+}
+
+.header-menu-link-news {
+    text-decoration: none;
+    color: #000000;
+    text-transform: none;
+}
+
+.header-search {
+    border: 4px solid #020d18;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+}
+
+.header-search-select {
+    border-right: 1px solid #020d18;
+    width: 20%;
+    text-transform: uppercase;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #233a50;
+    height: 46px;
+    color: #fff;
+}
+
+.header-search-select option {
+    font-size: 16px;
+}
+
+.header-search-input {
+    color: #fff;
+    background-color: #233a50;
+    height: 46px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    flex-grow: 1;
+}
+
+.header-search-result {
+    width: 80%;
+    position: absolute;
+    top: 50px;
+    left: 20%;
+    background-color: #fff;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.header-search-result li {
+    padding: 5px 0;
+}
+
+.header-search-result li:hover {
+    background-color: #c4f3f3;
+}
+
+.header-search-result li a {
+    color: #374350;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+}
+
+.header-search-icon {
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 18px;
+    text-align: center;
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    cursor: pointer;
+}
+
+.header-social {
+    color: #fff;
+    width: 100%;
+    text-align: right;
+}
+
+.header-social span {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-right: 15px;
+    letter-spacing: 1px;
+}
+
+.header-social a {
+    color: #fff;
+    width: 32px;
+    display: inline-block;
+    text-align: left;
+}
+
+/* Container */
+.container {
+    max-width: 80em;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.list-film {
+    padding-left: 15px;
+}
+
+.film {
+    position: relative;
+    cursor: pointer;
+}
+
+.film-image {
+    width: 250px;
+    position: relative;
+}
+
+.film-image img {
+    width: 250px;
+    border-radius: 10px;
+}
+
+.film-image::before {
+    content: '';
+    background-color: #000;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0);
+}
+
+.film:hover .film-image::before {
+    opacity: 0.7;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.film-description {
+    position: absolute;
+    left: 10px;
+    bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.film-description span,
+.film-description h2 {
+    color: #fff;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.film-description .film-time {
+    background-color: #dd003f;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+.film-star span {
+    font-size: 18px;
+}
+
+.icon-star {
+    color: #dcf836;
+    font-size: 22px;
+}
+
+/* Tiket Booking */
+.ticket-booking {
+    background-color: #fff;
+    margin-top: 90px;
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    overflow-y: overlay;
+}
+
+.ticket-booking-select {
+    border: none;
+    outline: none;
+    color: #555;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-right: 1px solid #ccc;
+    height: 40px;
+    margin: 10px;
+}
+
+.ticket-movie {
+    flex-grow: 5;
+}
+
+.ticket-movie select {
+    width: 100%;
+}
+
+.ticket-cinema {
+    flex-grow: 1;
+    text-align: right;
+}
+.ticket-day {
+    flex-grow: 1;
+    text-align: right;
+}
+.ticket-time {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.ticket-buying {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.ticket-buying a {
+    background-color: #dd003f;
+    opacity: 0.7;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 5px;
+}
+
+/* Slick css */
+.slick-arrow {
+    display: none !important;
+}
+
+/* Responsive */
+.header-bar {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    border: 3px solid #fff;
+}
+
+.bar-button {
+    margin-left: 4px;
+    margin-top: 5px;
+}
+
+/* Mobile: witdh < 740px */
+@media only screen and (max-width: 280px) {
+    .film-image img {
+        width: 104px;
+    }
+
+    .film-description h2 {
+        font-size: 11px;
+    }
+
+    .film-description .film-time {
+        width: 60%;
+        margin-bottom: 0;
+        font-size: 13px;
+    }
+
+    .film-description .film-star {
+        font-size: 10px;
+    }
+
+    .icon-star {
+        color: #dcf836;
+        font-size: 15px;
+    }
+
+    .film-star span {
+        font-size: 14px;
+    }
+
+    .slick-dots {
+        text-align: center !important;
+    }
+}
+
+@media only screen and (min-width: 281px) and (max-width: 374px) {
+    .film-image img {
+        width: 130px;
+    }
+
+    .film-description h2 {
+        font-size: 14px;
+    }
+
+    .slick-dots {
+        text-align: center !important;
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 410px) {
+    .film-image img {
+        width: 150px;
+    }
+
+    .film-description h2 {
+        font-size: 14px;
+    }
+
+    .slick-dots {
+        text-align: center !important;
+    }
+}
+
+@media only screen and (min-width: 411px) and (max-width: 539px) {
+    .film-image img {
+        width: 160px;
+    }
+
+    .film-description h2 {
+        font-size: 16px;
+    }
+
+    .slick-dots {
+        text-align: center !important;
+    }
+}
+
+@media only screen and (min-width: 540px) and (max-width: 768px) {
+    .film-image img {
+        width: 220px;
+    }
+
+    .slick-dots {
+        text-align: center !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header-search-input::placeholder {
+        width: 80%;
+    }
+
+    .ticket-booking {
+        display: none;
+    }
+}
+
+/* Tablet and Mobile */
+@media only screen and (max-width: 1112px) {
+    .header-menu {
+        display: none;
+    }
+
+    .header-container {
+        background-color: #020d18;
+    }
+
+    .header-menu.activeMenu {
+        display: block;
+        width: 100%;
+    }
+
+    .header-menu.activeMenu a {
+        font-size: 18px;
+    }
+
+    .header-menu.activeMenu .header-menu-left,
+    .header-menu.activeMenu .header-menu-right {
+        flex-direction: column;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .header-menu.activeMenu .header-menu-left {
+        left: 0px;
+    }
+
+    .header-menu.activeMenu .header-menu-left > li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .header-menu.activeMenu .header-menu-right {
+        align-items: flex-start;
+        font-size: 16px;
+    }
+
+    .header-menu.activeMenu .header-menu-right li {
+        margin-bottom: 20px;
+    }
+
+    .header-menu.activeMenu .header-menu-register {
+        margin-left: 14px;
+    }
+
+    .header-menu.activeMenu .link-news {
+        position: relative;
+        transform: translateY(0);
+        top: 10px;
+        background-color: #020d18;
+        margin-left: 20px;
+        transition: ease-in-out 1s;
+
+        opacity: 0;
+        display: none;
+    }
+
+    .header-menu.activeMenu .link-news a {
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .header-menu.activeMenu .header-menu-list i {
+        position: absolute;
+        left: 96%;
+        font-size: 25px;
+    }
+
+    .header-menu.activeMenu .link-news.activeList {
+        opacity: 1;
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1112px) {
+    .film-image img {
+        width: 230px;
+        border-radius: 10px;
+    }
+
+    .ticket-booking {
+        display: none;
+    }
+}
+
+/* PC: width >= 1024px */
+@media only screen and (min-width: 1112px) {
+    .header-bar {
+        display: none;
+    }
+}

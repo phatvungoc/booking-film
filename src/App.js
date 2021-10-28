@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import HomeMovie from './components/HomeMovie';
+import Home from './components/Home';
+import DetailMovie from './components/DetailMovie';
+import Booking from './components/Booking';
+import { getMovieSoon } from './redux/actions/moviesoon.action';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const credentialStr = localStorage.getItem('credentials');
+    const dispatch = useDispatch();
+
+    const _getMovieSoon = () => {
+        dispatch(getMovieSoon());
+    };
+
+    const _getCredentialFromLocal = () => {
+        if (credentialStr) {
+            dispatch({
+                type: 'FETCH_CREDENTIAL',
+                payload: JSON.parse(credentialStr),
+            });
+        }
+    };
+
+    useEffect(() => {
+        _getMovieSoon();
+        _getCredentialFromLocal();
+    }, []);
+
+    return (
+        <div className="App">
+            <Router>
+                <Switch>
+                    <Route path="/" exact={true} component={Home}></Route>
+                    <Route path="/dat-ve/:maLichChieu">
+                        <Booking />
+                    </Route>
+                    <Route
+                        path="/phim"
+                        exact={true}
+                        component={HomeMovie}
+                    ></Route>
+                    <Route path="/phim/:tenPhim:maPhim">
+                        <DetailMovie />
+                    </Route>
+                </Switch>
+            </Router>
+        </div>
+    );
 }
 
 export default App;

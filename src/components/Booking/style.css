@@ -1,0 +1,138 @@
+.section-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #020d18;
+}
+
+.booking {
+    position: relative;
+    overflow: hidden;
+}
+.booking-screen {
+    background-color: #dd003f;
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    width: 90%;
+    height: 80px;
+    line-height: 80px;
+    margin: 0 auto 50px;
+    border-radius: 8px;
+}
+.booking-seat {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -3px;
+    margin-right: -3px;
+}
+.booking-seat-item {
+    padding-left: 3px;
+    padding-right: 3px;
+    flex: 0 0 16.6666666667%;
+}
+.booking-seat-item span {
+    color: #fff;
+    max-width: 100%;
+    min-height: 32px;
+    line-height: 32px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+}
+
+.booking-seat-normal span {
+    background-color: #dd003f;
+}
+.booking-seat-vip span {
+    background-color: #dcf836;
+    color: #020d18;
+}
+
+.booking-seat-selected span {
+    background-color: #4280bf;
+}
+
+.booking-seat-booked {
+    cursor: not-allowed;
+}
+
+.booking-seat-booked span {
+    background-color: #233a50;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.booking-type-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #abb7c4;
+}
+.booking-type-item span {
+    border-radius: 5px;
+    min-width: 35px;
+    min-height: 16px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.booking-type-normal {
+    background-color: #dd003f;
+}
+.booking-type-vip {
+    background-color: #dcf836;
+    color: #020d18;
+}
+.booking-type-selected {
+    background-color: #4280bf;
+}
+.booking-type-booked {
+    background-color: #233a50;
+}
+
+.booking-info-image {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.booking-info-item {
+    color: #4280bf;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+.booking-info-item span {
+    color: #abb7c4;
+    font-weight: 600;
+}
+.booking-btn {
+    text-align: center;
+    margin-top: 25px;
+}
+.booking-btn span {
+    background-color: #dd003f;
+    color: #fff;
+    border-radius: 20px;
+    padding: 9px 60px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    cursor: pointer;
+}
+
+@media (min-width: 992px) {
+    .booking-screen {
+        width: 70%;
+    }
+    .booking-seat-item {
+        flex: 0 0 10%;
+    }
+}
+.booking-info-image {
+    margin-top: 0;
+}
