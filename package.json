@@ -2,7 +2,7 @@
     "name": "booking-film-16-10",
     "version": "0.1.0",
     "private": true,
-    "homepage": "http://phatvungoc.github.io/booking-cinema",
+    "homepage": "https://phatvungoc.github.io/booking-movie",
     "dependencies": {
         "@emotion/react": "^11.5.0",
         "@emotion/styled": "^11.3.0",
@@ -28,11 +28,11 @@
     },
     "scripts": {
         "start": "react-scripts start",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
+        "eject": "react-scripts eject"
     },
     "eslintConfig": {
         "extends": [
