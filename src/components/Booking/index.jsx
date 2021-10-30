@@ -21,7 +21,6 @@ const Booking = () => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.booking.danhSachGhe);
     const dataInfo = useSelector((state) => state.booking.thongTinPhim);
-    const isLogin = localStorage.getItem('credentials');
 
     const credentials = useSelector((state) => state.user.credentials);
     console.log(credentials);

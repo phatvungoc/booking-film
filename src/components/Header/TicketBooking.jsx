@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, connect } from 'react-redux';
 import { actGetListDetailFilm } from '../../redux/actions/movie.action';
+import { Link } from 'react-router-dom';
 
 const TicketBooking = (props) => {
     const [maPhim, setmaPhim] = useState();
@@ -226,7 +227,7 @@ const TicketBooking = (props) => {
                 </select>
             </div>
             <div className="ticket-booking-action ticket-buying">
-                <a href="/">Mua vé</a>
+                <Link to={`/dat-ve/${state.maLichChieu}`}>Mua vé</Link>
             </div>
         </div>
     );
