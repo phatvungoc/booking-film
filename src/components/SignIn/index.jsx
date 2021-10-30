@@ -12,15 +12,19 @@ export default function SignIn() {
             .classList.remove('active');
     };
 
+    const handleSubmitLogin = (value) => {
+        dispatch(login(value));
+    };
+
     return (
         <Formik
             initialValues={{
                 taiKhoan: '',
                 matKhau: '',
             }}
+            type="button"
             onSubmit={(value) => {
-                dispatch(login(value));
-                // console.log(value);
+                handleSubmitLogin(value);
             }}
         >
             {({ handleChange }) => (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import HeaderSearch from './HeaderSearch';
 import { Link, useHistory } from 'react-router-dom';
@@ -11,9 +11,11 @@ const HeaderContainer = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const userIsLogin = localStorage.getItem('credentials');
+    // const userIsLogin = localStorage.getItem('credentials');
+    // console.log(userIsLogin);
 
     const credentials = useSelector((state) => state.user.credentials);
+    console.log(credentials);
 
     const handleClickMenu = () => {
         setClicked(!clicked);
@@ -38,6 +40,7 @@ const HeaderContainer = () => {
     const _clearItem = () => {
         localStorage.removeItem('credentials');
         dispatch({ type: 'CLEAR_CREDENTIAL' });
+        window.location.reload();
     };
 
     return (

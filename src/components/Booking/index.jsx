@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import '../Header/style.css';
@@ -23,6 +23,11 @@ const Booking = () => {
     const dataInfo = useSelector((state) => state.booking.thongTinPhim);
     const isLogin = localStorage.getItem('credentials');
 
+    const credentials = useSelector((state) => state.user.credentials);
+    console.log(credentials);
+
+    const [userIsLogin, setUserIsLogin] = useState(credentials);
+
     function trangThaiGhe(daDat, dangChon) {
         if (daDat) {
             return 'booking-seat-booked';
@@ -33,6 +38,10 @@ const Booking = () => {
             return '';
         }
     }
+
+    useEffect(() => {
+        setUserIsLogin(credentials);
+    }, [credentials]);
 
     useEffect(() => {
         dispatch(getBookingRequest(maLichChieu));
@@ -96,8 +105,8 @@ const Booking = () => {
             maGhe: ghe.maGhe,
             giaVe: ghe.giaVe,
         }));
-        console.log(danhSachVe);
-        if (isLogin === null) {
+        // console.log(danhSachVe);
+        if (userIsLogin === null) {
             alert('Bạn cần đăng nhập tài khoản để đặt vé !!!');
         } else {
             if (danhSachVe.length === 0) {
@@ -105,7 +114,7 @@ const Booking = () => {
             } else {
                 confirmAlert({
                     title: 'Xác nhận đặt vé',
-                    message: `Bạn có chắc muốn đặt vé ${danhSachVe.idGhe} không ?`,
+                    message: `Bạn có chắc muốn đặt vé không ?`,
                     buttons: [
                         {
                             label: 'Yes',
