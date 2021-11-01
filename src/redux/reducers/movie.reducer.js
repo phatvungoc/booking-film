@@ -26,6 +26,9 @@ const movieReducer = (state = initialState, action) => {
         case 'LIST_SEARCH_FILM': {
             return { ...state, listMovieSearch: payload };
         }
+        case 'LIST_SEARCH_SOON_FILM': {
+            return { ...state, listMovieSearch: payload };
+        }
         case 'CLEAR_LIST_SEARCH_FILM': {
             return { ...state, listMovieSearch: [] };
         }

@@ -85,3 +85,22 @@ function getListSearchFilm(film) {
         payload: film,
     };
 }
+
+//search Soon Movie
+export function searchSoonMovie(keyword, listSoonMovie) {
+    return (dispatch) => {
+        if (keyword) {
+            const listMovie = listSoonMovie.filter((movie) =>
+                movie.tenPhim.toLowerCase().includes(keyword.toLowerCase())
+            );
+            dispatch(getListSearchMovieSoon(listMovie));
+        }
+    };
+}
+
+function getListSearchMovieSoon(listFilm) {
+    return {
+        type: 'LIST_SEARCH_SOON_FILM',
+        payload: listFilm,
+    };
+}

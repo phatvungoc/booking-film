@@ -1,23 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
-import { searchMovie } from '../../redux/actions/movie.action';
+import { searchMovie, searchSoonMovie } from '../../redux/actions/movie.action';
 
 const HeaderSearch = () => {
     const [searchValue, setSearchValue] = useState('');
     const listSearchFilm = useSelector((state) => state.movie.listMovieSearch);
+    const listSoonMovie = useSelector((state) => state.movie.listSoonMovie);
+    console.log(listSoonMovie);
+    const [stateFilm, setStateFilm] = useState('dangchieu');
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (searchValue.length > 0) {
-            var timeout = setTimeout(
-                () => dispatch(searchMovie(searchValue)),
-                500
-            );
+        if (stateFilm === 'dangchieu') {
+            if (searchValue.length > 0) {
+                var timeout = setTimeout(
+                    () => dispatch(searchMovie(searchValue)),
+                    500
+                );
+            } else {
+                dispatch({
+                    type: 'CLEAR_LIST_SEARCH_FILM',
+                });
+            }
         } else {
-            dispatch({
-                type: 'CLEAR_LIST_SEARCH_FILM',
-            });
+            if (searchValue.length > 0) {
+                timeout = setTimeout(
+                    () => dispatch(searchSoonMovie(searchValue, listSoonMovie)),
+                    500
+                );
+            } else {
+                dispatch({
+                    type: 'CLEAR_LIST_SEARCH_FILM',
+                });
+            }
         }
         return () => {
             dispatch({
@@ -25,7 +41,7 @@ const HeaderSearch = () => {
             });
             clearTimeout(timeout);
         };
-    }, [searchValue, dispatch]);
+    }, [searchValue, dispatch, stateFilm, listSoonMovie]);
 
     const onChaneSearchValue = (e) => {
         setSearchValue(e.target.value);
@@ -50,11 +66,20 @@ const HeaderSearch = () => {
         );
     };
 
+    const handleChangeStateFilm = (e) => {
+        setStateFilm(e.target.value);
+        console.log(e.target.value);
+    };
+
     return (
         <div className="header-search">
-            <select className="header-search-select" name="" id="">
-                <option value="">Đang chiếu</option>
-                <option value="">Sắp chiếu</option>
+            <select
+                className="header-search-select"
+                value={stateFilm}
+                onChange={handleChangeStateFilm}
+            >
+                <option value="dangchieu">Đang chiếu</option>
+                <option value="sapchieu">Sắp chiếu</option>
             </select>
             <input
                 value={searchValue}

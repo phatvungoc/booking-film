@@ -6,6 +6,7 @@ import Home from './components/Home';
 import DetailMovie from './components/DetailMovie';
 import Booking from './components/Booking';
 import { getMovieSoon } from './redux/actions/moviesoon.action';
+import ScrollToTop from './components/ScrollToTop';
 function App() {
     const credentialStr = localStorage.getItem('credentials');
     const dispatch = useDispatch();
@@ -31,6 +32,7 @@ function App() {
     return (
         <div className="App">
             <Router>
+                <ScrollToTop />
                 <Switch>
                     <Route path="/" exact={true} component={Home}></Route>
                     <Route path="/dat-ve/:maLichChieu">
